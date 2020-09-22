@@ -33,13 +33,20 @@ public class TripPlanner {
         int money = travel.nextInt();
         System.out.print("What is the three letter currency symbol for your travel destination? ");
         String currency = travel.next();
-        System.out.print("How many " + currency + " are there in 1 USD.?");
+        System.out.print("How many " + currency + " are there in 1 USD.? ");
+        double conversion = travel.nextDouble();
         System.out.println();
 
         var hours = HRS_IN_DAY * travelDays;
         var mins = hours * MINS_IN_HR;
+        var perDay = money / travelDays;
+        var convTotal = conversion * money;
+        var convPerDay = convTotal / travelDays;
 
-        System.out.println("If you are travelling for " + travelDays + " days that is the same as " + hours + " or " + mins + "minutes");
+        System.out.println("If you are travelling for " + travelDays + " days that is the same as " + hours + " hours or " + mins + " minutes");
+        System.out.println("If you are going to spend " + money + " USD that means per day you can spend up to " + perDay + " USD ");
+        System.out.println("Your total budget in " + currency + " is " + convTotal + " " + currency + ", which per day is " + convPerDay + " " + currency);
+        System.out.println("***********");
 
 
     }
