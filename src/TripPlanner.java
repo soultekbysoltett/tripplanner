@@ -8,9 +8,9 @@ public class TripPlanner {
 
     public static void main(String[] args) {
         greeting();
-        travelTimeBudget();
-        timeDifference();
-        countryArea();
+        //travelTimeBudget();
+        //timeDifference();
+        //countryArea();
 
     }
 
@@ -22,7 +22,17 @@ public class TripPlanner {
         String name = greeting.nextLine();
         System.out.print("Nice to meet you " + name + ", where are you travelling to? ");
         String destination = greeting.nextLine();
-        System.out.println("Great " + destination + " sounds like a great trip");
+
+        if (destination.equals("USA")) {
+            System.out.println("This destination is not available");
+        } else if (destination.equals("China")) {
+            System .out.print("Which City? ");
+            String city = greeting.nextLine();
+            System.out.println("Great " + city + ", " + destination + " sounds like a great trip");
+        } else {
+            System.out.println("Great " + destination + " sounds like a great trip");
+        }
+
         System.out.println("***********");
         System.out.println();
 
